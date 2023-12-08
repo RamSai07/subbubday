@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1"/> 
   <link rel="icon" href="gp1.jpg" type="image/x-icon">
 	 <!-- <embed src='hi2.mp3' loop="true" autostart="true" width="2" height="0" hidden="true" allow="autoplay"> -->
-    <audio controls loop autoplay style="display:none;">
+    <audio id="backgroundMusic" controls loop autoplay style="display:none;">
       <source src="hi2.mp3" type="audio/mp3">
       Your browser does not support the audio element.
     </audio>
@@ -182,12 +182,32 @@
   
 
 	  </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var audio = document.getElementById("backgroundMusic");
+
+    // Check if the audio can be played automatically
+    var promise = audio.play();
+
+    if (promise !== undefined) {
+      promise.then(function() {
+        // Autoplay started
+      }).catch(function(error) {
+        // Autoplay prevented
+        // You might want to provide a play button or use audio only in response to user actions
+      });
+    }
+  });
+  
+</script>
 </head>
 <body>
 <div class="Happy">
 	<h1>Happy Birthday <br> 
      Subbu  
 	</h1>
+  
 </div>
 <div class="pic">
    <div class="main">
@@ -230,7 +250,7 @@
     🥂 Cheers to you, Kitty! May this year bring you success, love, and all the happiness your heart desires.<br>
     🎊 Let the celebrations begin! Have a fantastic birthday and an amazing year ahead! 🎉🥂
   </p>
-  <p>Your Lovely Friends<br>F.R.I.E.N.D.S ❤️</p>
+  <p >Your Lovely F.R.I.E.N.D.S ❤️</p>
 </div>
 </body>
 </html>
